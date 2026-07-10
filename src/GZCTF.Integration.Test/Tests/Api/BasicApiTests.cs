@@ -64,7 +64,14 @@ public class BasicApiTests(GZCTFApplicationFactory factory, ITestOutputHelper ou
         var userName = TestDataSeeder.RandomName();
         var email = $"{userName}@example.com";
 
-        var registerModel = new RegisterModel { UserName = userName, Email = email, Password = "P@ssw0rd!123" };
+        var registerModel = new RegisterModel
+        {
+            UserName = userName,
+            Email = email,
+            Password = "P@ssw0rd!123",
+            RealName = "Test User",
+            StdNumber = "20240001"
+        };
 
         var registerResponse = await client.PostAsJsonAsync("/api/Account/Register", registerModel);
         output.WriteLine($"Register status: {registerResponse.StatusCode}");
@@ -82,6 +89,8 @@ public class BasicApiTests(GZCTFApplicationFactory factory, ITestOutputHelper ou
         Assert.NotNull(profile);
         Assert.Equal(registerModel.UserName, profile.UserName);
         Assert.Equal(registerModel.Email, profile.Email);
+        Assert.Equal(registerModel.RealName, profile.RealName);
+        Assert.Equal(registerModel.StdNumber, profile.StdNumber);
     }
 
     [Fact]
