@@ -127,7 +127,7 @@ jobs:
         uses: dataaxiom/ghcr-cleanup-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          package: ${{ github.repository }}/gzctf
+          package: gzctf-modify/gzctf
           exclude-tags: latest,develop,work,v*
           validate: true
           dry-run: false
