@@ -180,6 +180,22 @@ const Profile: FC = () => {
             disabled={disabled}
             onChange={(event) => setProfile({ ...profile, phone: event.target.value })}
           />
+          <TextInput
+            label={t('account.label.real_name')}
+            type="text"
+            w="100%"
+            value={user?.realName ?? ''}
+            disabled
+            readOnly
+          />
+          <TextInput
+            label={t('account.label.student_id')}
+            type="text"
+            w="100%"
+            value={user?.stdNumber ?? ''}
+            disabled
+            readOnly
+          />
         </SimpleGrid>
         <Textarea
           label={t('account.label.bio')}
