@@ -87,7 +87,7 @@ jobs:
         id: meta
         with:
           images: |
-            gztime/gzctf
+            fr3nky/gzctf
             ghcr.io/${{ github.repository }}/gzctf
           flavor: |
             latest=${{ env.RELEASE }}

@@ -1,9 +1,9 @@
-FROM mcr.microsoft.com/dotnet/aspnet:10.0-alpine AS build
+FROM mcr.microsoft.com/dotnet/aspnet:10.0-alpine3.23 AS build
 ARG TARGETPLATFORM
 COPY publish /build
 RUN cp -r /build/${TARGETPLATFORM} /publish
 
-FROM mcr.microsoft.com/dotnet/aspnet:10.0-alpine AS final
+FROM mcr.microsoft.com/dotnet/aspnet:10.0-alpine3.23 AS final
 ARG TARGETPLATFORM
 
 ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false \
