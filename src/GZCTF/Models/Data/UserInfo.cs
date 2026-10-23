@@ -118,7 +118,6 @@ public partial class UserInfo : IdentityUser<Guid>
     {
         // use SetUserNameAsync to update UserName
         Bio = model.Bio ?? Bio;
-        PhoneNumber = model.Phone ?? PhoneNumber;
     }
 
     #region Db Relationship
