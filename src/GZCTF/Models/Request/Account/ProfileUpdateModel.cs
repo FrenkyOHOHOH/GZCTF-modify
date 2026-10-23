@@ -22,11 +22,4 @@ public class ProfileUpdateModel
     [MaxLength(Limits.MaxUserDataLength, ErrorMessageResourceName = nameof(Resources.Program.Model_BioTooLong),
         ErrorMessageResourceType = typeof(Resources.Program))]
     public string? Bio { get; set; }
-
-    /// <summary>
-    /// Phone number
-    /// </summary>
-    [Phone(ErrorMessageResourceName = nameof(Resources.Program.Model_MalformedPhoneNumber),
-        ErrorMessageResourceType = typeof(Resources.Program))]
-    public string? Phone { get; set; }
 }
