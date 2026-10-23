@@ -40,7 +40,6 @@ const Profile: FC = () => {
   const [profile, setProfile] = useState<ProfileUpdateModel>({
     userName: user?.userName,
     bio: user?.bio,
-    phone: user?.phone,
   })
   const [avatarFile, setAvatarFile] = useState<File | null>(null)
 
@@ -61,7 +60,6 @@ const Profile: FC = () => {
     setProfile({
       userName: user?.userName,
       bio: user?.bio,
-      phone: user?.phone,
     })
   })
 
@@ -179,7 +177,7 @@ const Profile: FC = () => {
             w="100%"
             value={profile.phone ?? ''}
             disabled={disabled}
-            onChange={(event) => setProfile({ ...profile, phone: event.target.value })}
+            readOnly
           />
           <TextInput
             label={t('account.label.real_name')}
