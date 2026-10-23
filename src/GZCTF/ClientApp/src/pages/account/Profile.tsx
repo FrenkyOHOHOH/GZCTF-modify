@@ -176,7 +176,7 @@ const Profile: FC = () => {
             type="tel"
             w="100%"
             value={profile.phone ?? ''}
-            disabled={disabled}
+            disabled
             readOnly
           />
           <TextInput
